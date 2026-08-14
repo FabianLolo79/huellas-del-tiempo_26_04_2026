@@ -14,7 +14,7 @@ public class LifeSystem
     private void OnWrongLetter(char letter)
     {
         _errors ++;
-        Debug.Log($"Error {_errors}/{_maxErrors}");
+        Debug.Log($"[LifeSystem] Error {_errors}/{_maxErrors}");
 
         if (_errors >= _maxErrors)
         {

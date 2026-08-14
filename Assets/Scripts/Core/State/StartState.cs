@@ -4,8 +4,8 @@ public class StartState : IGameState
 {
     public void Enter()
     {
-        Debug.Log("Estado: START");
-        //GameManager.Instance.StartGame()
+        Debug.Log("[StartState] Estado: START");
+        GameManager.Instance.StartGame();
     }
 
     public void Exit()

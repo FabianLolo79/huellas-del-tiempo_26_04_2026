@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         EventBus.OnGameLost += OnGameLost;
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         LifeSystem.Reset();
         WordSystem.SetWord("UNITY");
@@ -54,16 +54,13 @@ public class GameManager : MonoBehaviour
         StateMachine.ChangeState(new PlayingState());
     }
 
-    private void OnGameWon()
+    public void OnGameWon()
     {
         StateMachine.ChangeState(new WinState());
     }
 
-    private void OnGameLost()
+    public void OnGameLost()
     {
         StateMachine.ChangeState(new LoseState());
     }
-
-
-
 }
