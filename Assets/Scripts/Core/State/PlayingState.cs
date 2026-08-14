@@ -5,7 +5,7 @@ public class PlayingState : IGameState
 {
     public void Enter()
     {
-        Debug.Log("Estado: PLAYING");
+        Debug.Log("[PlayingState] Estado: PLAYING");
     }
 
     public void Exit()

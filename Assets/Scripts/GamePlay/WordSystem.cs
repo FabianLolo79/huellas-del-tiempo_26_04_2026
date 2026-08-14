@@ -12,7 +12,7 @@ public class WordSystem
         _currentWord = word.ToUpper();
         _guessedLetters.Clear();
 
-        Debug.Log($"Palabra: {_currentWord}");
+        Debug.Log($"[WordSystem] Palabra: {_currentWord}");
     }
 
     public void TryLetter(char letter)

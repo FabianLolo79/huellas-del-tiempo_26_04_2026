@@ -5,7 +5,7 @@ public class WinState : IGameState
 {
     public void Enter()
     {
-        Debug.Log("Estado: WIN");
+        Debug.Log("[WinState] Estado: WIN");
     }
 
     public void Exit()

@@ -4,7 +4,7 @@ public class LoseState : IGameState
 {
     public void Enter()
     {
-        Debug.Log("Estado: Lose");
+        Debug.Log("[LoseState] Estado: Lose");
     }
 
     public void Exit()
