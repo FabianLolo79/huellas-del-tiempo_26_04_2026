@@ -1,6 +1,7 @@
 using System;
+using Unity.VisualScripting;
 
-    //Observer pattern
+//Observer pattern
 public static class EventBus
 {
     public static Action<char> OnCorrectLetter;
@@ -9,6 +10,9 @@ public static class EventBus
     public static Action<char> OnLetterUsed;
 
     public static Action<int> OnErrorChanged;
+    public static Action<LifeSceneData> OnLifeSceneChanged;
+
+    public static Action OnLifeTransition; 
 
     public static Action OnGameWon;
     public static Action OnGameLost;

@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         EventBus.OnGameWon += OnGameWon;
         EventBus.OnGameLost += OnGameLost;
+        EventBus.OnLifeTransition += OnLifeTransition;
     }
 
     public void StartGame()
@@ -66,5 +67,10 @@ public class GameManager : MonoBehaviour
     private void OnGameLost()
     {
         StateMachine.ChangeState(new LoseState());
+    }
+
+    private void OnLifeTransition()
+    {
+        StateMachine.ChangeState(new LifeTransitionState());
     }
 }

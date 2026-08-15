@@ -27,6 +27,8 @@ public class LifeSystem
         if (scene != null)
         {
             Debug.Log($"[LifeSystem] Escena de vida {scene.Title}");
+            EventBus.OnLifeTransition?.Invoke();
+            EventBus.OnLifeSceneChanged?.Invoke(scene);
         }
 
         if (_errors >= _maxErrors)
