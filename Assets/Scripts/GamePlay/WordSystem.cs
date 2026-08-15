@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WordSystem 
@@ -19,8 +18,12 @@ public class WordSystem
     {
         letter = char.ToUpper(letter);
 
-        if (_guessedLetters.Contains(letter)) return;
-        
+        if (_guessedLetters.Contains(letter))
+        {
+            EventBus.OnLetterAlreadyUsed?.Invoke(letter);
+            return;
+        }
+
         _guessedLetters.Add(letter);
 
         if (_currentWord.Contains(letter))
@@ -31,10 +34,10 @@ public class WordSystem
             {
                 EventBus.OnGameWon?.Invoke();
             }
-            else
-            {
-                EventBus.OnWrongLetter?.Invoke(letter);
-            }
+        }
+        else 
+        {
+            EventBus.OnWrongLetter?.Invoke(letter);
         }
     }
 
@@ -47,6 +50,4 @@ public class WordSystem
         }
         return true;
     }
-
-
 }

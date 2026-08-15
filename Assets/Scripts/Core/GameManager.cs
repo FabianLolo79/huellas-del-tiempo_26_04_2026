@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(gameObject);   
+            Destroy(gameObject);
+            return;
         }
 
         Instance = this;
@@ -54,12 +55,12 @@ public class GameManager : MonoBehaviour
         StateMachine.ChangeState(new PlayingState());
     }
 
-    public void OnGameWon()
+    private void OnGameWon()
     {
         StateMachine.ChangeState(new WinState());
     }
 
-    public void OnGameLost()
+    private void OnGameLost()
     {
         StateMachine.ChangeState(new LoseState());
     }
