@@ -18,14 +18,18 @@ public class WordSystem
     {
         letter = char.ToUpper(letter);
 
+        // la aletra ya fué utilizada
         if (_guessedLetters.Contains(letter))
         {
             EventBus.OnLetterAlreadyUsed?.Invoke(letter);
             return;
         }
 
+        // Registramos la letra como utilizada
         _guessedLetters.Add(letter);
+        EventBus.OnLetterUsed?.Invoke(letter);
 
+        // comoprobamos si la letra pertenece a la palabra
         if (_currentWord.Contains(letter))
         {
             EventBus.OnCorrectLetter?.Invoke(letter);
