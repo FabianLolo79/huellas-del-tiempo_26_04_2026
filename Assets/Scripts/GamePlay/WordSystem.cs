@@ -4,7 +4,9 @@ using UnityEngine;
 public class WordSystem 
 {
     private string _currentWord;
-    private HashSet<char> _guessedLetters = new HashSet<char>();
+    private HashSet<char> _guessedLetters = new();
+
+    public string CurrentWord => _currentWord;
 
     public void SetWord(string word)
     {
@@ -12,6 +14,11 @@ public class WordSystem
         _guessedLetters.Clear();
 
         Debug.Log($"[WordSystem] Palabra: {_currentWord}");
+    }
+
+    public bool IsLetterGuessed(char letter)
+    {
+        return _guessedLetters.Contains(char.ToUpper(letter));
     }
 
     public void TryLetter(char letter)
