@@ -8,6 +8,7 @@ public static class EventBus
     public static Action<char> OnLetterAlreadyUsed;
     public static Action<char> OnLetterUsed;
 
+    public static Action<int> OnErrorChanged;
 
     public static Action OnGameWon;
     public static Action OnGameLost;
