@@ -22,6 +22,13 @@ public class LifeSystem
 
         Debug.Log($"[LifeSystem] Error {_errors}/{_maxErrors}");
 
+        LifeSceneData scene = GameManager.Instance.LifeSceneDatabase.GetScene(_errors);
+
+        if (scene != null)
+        {
+            Debug.Log($"[LifeSystem] Escena de vida {scene.Title}");
+        }
+
         if (_errors >= _maxErrors)
         {
             EventBus.OnGameLost?.Invoke();

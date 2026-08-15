@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameStateMachine StateMachine { get; private set; }
     public WordSystem WordSystem { get; private set; }
     public LifeSystem LifeSystem { get; private set; }
+    public LifeSceneDatabase LifeSceneDatabase { get; private set; }
 
     private void Awake()
     {
@@ -34,7 +35,9 @@ public class GameManager : MonoBehaviour
     private void InitializeSystems()
     {
         WordSystem = new WordSystem();
-        LifeSystem = new LifeSystem(); 
+        LifeSystem = new LifeSystem();
+
+        LifeSceneDatabase = FindAnyObjectByType<LifeSceneDatabase>();
 
         StateMachine = new GameStateMachine();
 
